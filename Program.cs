@@ -7,8 +7,10 @@ using Swashbuckle.AspNetCore.Annotations;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
-    .WriteTo.Seq("https://upload.seq.simon-paltzow.de")
+    .WriteTo.Seq("https://upload.seq.simon-paltzow.de", apiKey: "JfE7ZiveXyZgWAXoAqUP")
     .CreateLogger();
+
+string version = "1.0.1";
 
 try
 {
@@ -21,9 +23,9 @@ try
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen(c => 
     {
-        c.SwaggerDoc("1.0.0", new Microsoft.OpenApi.Models.OpenApiInfo
+        c.SwaggerDoc(version, new Microsoft.OpenApi.Models.OpenApiInfo
         {
-            Version = "1.0.0",
+            Version = version,
             Title = "StringCompare-API",
             Description = "WebAPI for comparing texts using <a href=\"https://github.com/google/diff-match-patch\" target=\"_blank\">google diff-match-patch</a>",
         });
@@ -44,7 +46,7 @@ try
     }
 
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("1.0.0/swagger.json", "StringCompare-API"));
+    app.UseSwaggerUI(c => c.SwaggerEndpoint(version + "/swagger.json", "StringCompare-API"));
 
     app.UseHttpsRedirection();
 
