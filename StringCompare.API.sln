@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCompare.API", "StringCompare.API.csproj", "{51B14EDB-73B9-4F38-9F61-594634C35C24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51B14EDB-73B9-4F38-9F61-594634C35C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B14EDB-73B9-4F38-9F61-594634C35C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B14EDB-73B9-4F38-9F61-594634C35C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B14EDB-73B9-4F38-9F61-594634C35C24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2220A6C-33C4-4BA9-B4BF-352E1B108B4A}
+	EndGlobalSection
+EndGlobal
