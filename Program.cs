@@ -35,6 +35,8 @@ try
 
     builder.Services.AddScoped<IValidator<DiffRequest>, DiffRequestValidator>();
 
+    builder.Services.AddCors();
+
     builder.Services.AddHealthChecks();
 
     var app = builder.Build();
@@ -49,6 +51,8 @@ try
     app.UseSwaggerUI(c => c.SwaggerEndpoint(version + "/swagger.json", "StringCompare-API"));
 
     app.UseHttpsRedirection();
+
+    app.UseCors(x => x.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 
     app.UseHealthChecks("/health");
 
