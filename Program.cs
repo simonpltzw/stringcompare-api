@@ -5,17 +5,17 @@ using StringCompare.API.Models;
 using StringCompare.API.Validators;
 using Swashbuckle.AspNetCore.Annotations;
 
+var builder = WebApplication.CreateBuilder(args);
+
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
-    .WriteTo.Seq("https://upload.seq.simon-paltzow.de", apiKey: "JfE7ZiveXyZgWAXoAqUP")
+    .WriteTo.Seq(builder.Configuration.GetValue<string>("Seq:Endpoint")!, apiKey: builder.Configuration.GetValue<string>("Seq:ApiKey")!, restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information)
     .CreateLogger();
 
 string version = "1.0.1";
 
 try
 {
-    var builder = WebApplication.CreateBuilder(args);
-
     builder.Host.UseSerilog();
 
     // Add services to the container.
